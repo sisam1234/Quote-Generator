@@ -12,16 +12,32 @@
 </head>
 <body>
     <div class="container">
-        <h1>Quote Generator</h1>
+        <h1>QuoteBox</h1>
         <div class="quote-box">
             <p class="quote" id="quotetext"></p>
             <p class="author" id="quoteauthor"></p>
         </div>
         <div class="controls">
-            <button onclick="showPreviousQuote()">Previous</button>
-            <button onclick="showRandomQuote()">Random</button>
-            <button onclick="showNextQuote()">Next</button>
+            <button onclick="showPreviousQuote()" class="previous">Previous</button>
+            <button onclick="showRandomQuote()" class="random">Random</button>
+            <button onclick="showNextQuote()" class="next">Next</button>
+        </div>
+        <div class="category-and_fontsize">
+            <span class="category-list">
+                <span class="category-text">Category:</span>
+                <select  id="categorySelector" onchange="onChangeCategory()">
+                    <option value="science">Science</option>
+                    <option value="coding">Coding</option>
+                    <option value="motivational">Motivational</option>
+                    <!-- <option value="motivational">motivational</option> -->
+                </select>
+            </span>
+        <span class="fontsize">
+            <label for="fontSize">Font Size:</label>
+          <input type="range" id="fontsize" max="35" min="20" value="32" onchange="onChangeCategoryFontSize()"/>
+        </span>
         </div>
     </div>
+
 </body>
 </html>

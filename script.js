@@ -1,4 +1,46 @@
 const quotes = {
+    science: [
+        {
+            text: "The important thing is not to stop questioning. Curiosity has its own reason for existing.",
+            author: "Albert Einstein"
+        },
+        {
+            text: "Science is a way of thinking much more than it is a body of knowledge.",
+            author: "Carl Sagan"
+        },
+        {
+            text: "Somewhere, something incredible is waiting to be known.",
+            author: "Carl Sagan"
+        },
+        {
+            text: "If I have seen further it is by standing on the shoulders of giants.",
+            author: "Isaac Newton"
+        },
+        {
+            text: "Equipped with his five senses, man explores the universe around him and calls the adventure Science.",
+            author: "Edwin Hubble"
+        },
+        {
+            text: "Science is the poetry of reality.",
+            author: "Richard Dawkins"
+        },
+        {
+            text: "The good thing about science is that it's true whether or not you believe in it.",
+            author: "Neil deGrasse Tyson"
+        },
+        {
+            text: "In questions of science, the authority of a thousand is not worth the humble reasoning of a single individual.",
+            author: "Galileo Galilei"
+        },
+        {
+            text: "The universe is under no obligation to make sense to you.",
+            author: "Neil deGrasse Tyson"
+        },
+        {
+            text: "Science knows no country, because knowledge belongs to humanity, and is the torch which illuminates the world.",
+            author: "Louis Pasteur"
+        }
+    ],
     coding: [
         {
             text: "Talk is cheap. Show me the code.",
@@ -57,53 +99,54 @@ const quotes = {
             author: "Donald Knuth",
         },
     ],
-    science:[
+
+    motivational: [
         {
-            text: "The important thing is not to stop questioning. Curiosity has its own reason for existing.",
-            author: "Albert Einstein"
+            text: "The only way to do great work is to love what you do.",
+            author: "Steve Jobs"
         },
         {
-            text: "Science is a way of thinking much more than it is a body of knowledge.",
-            author: "Carl Sagan"
+            text: "Success is not final, failure is not fatal: It is the courage to continue that counts.",
+            author: "Winston Churchill"
         },
         {
-            text: "Somewhere, something incredible is waiting to be known.",
-            author: "Carl Sagan"
+            text: "Believe you can and you're halfway there.",
+            author: "Theodore Roosevelt"
         },
         {
-            text: "If I have seen further it is by standing on the shoulders of giants.",
-            author: "Isaac Newton"
+            text: "The future belongs to those who believe in the beauty of their dreams.",
+            author: "Eleanor Roosevelt"
         },
         {
-            text: "Equipped with his five senses, man explores the universe around him and calls the adventure Science.",
-            author: "Edwin Hubble"
+            text: "The only limit to our realization of tomorrow is our doubts of today.",
+            author: "Franklin D. Roosevelt"
         },
         {
-            text: "Science is the poetry of reality.",
-            author: "Richard Dawkins"
+            text: "You miss 100% of the shots you don't take.",
+            author: "Wayne Gretzky"
         },
         {
-            text: "The good thing about science is that it's true whether or not you believe in it.",
-            author: "Neil deGrasse Tyson"
+            text: "It does not matter how slowly you go as long as you do not stop.",
+            author: "Confucius"
         },
         {
-            text: "In questions of science, the authority of a thousand is not worth the humble reasoning of a single individual.",
-            author: "Galileo Galilei"
+            text: "Act as if what you do makes a difference. It does.",
+            author: "William James"
         },
         {
-            text: "The universe is under no obligation to make sense to you.",
-            author: "Neil deGrasse Tyson"
+            text: "Your time is limited, so don’t waste it living someone else’s life.",
+            author: "Steve Jobs"
         },
         {
-            text: "Science knows no country, because knowledge belongs to humanity, and is the torch which illuminates the world.",
-            author: "Louis Pasteur"
+            text: "The best way to predict the future is to invent it.",
+            author: "Alan Kay"
         }
-    
     ]
+
 };
-let currentCategory = "coding";
+let currentCategory = "science";
 let currentIndex = 0;
-function   displayQuote(){
+function displayQuote() {
     const quotetext = document.getElementById("quotetext");
     const quoteauthor = document.getElementById("quoteauthor");
     quotetext.textContent = quotes[currentCategory][currentIndex].text;
@@ -122,6 +165,19 @@ function showNextQuote() {
 function showRandomQuote() {
     currentIndex = Math.floor(Math.random() * quotes[currentCategory].length);
     displayQuote();
+}
+function onChangeCategory() {
+    const categorySelector = document.getElementById("categorySelector");
+    currentCategory = categorySelector.value;
+    currentIndex = 0;
+    displayQuote();
+
+}
+function onChangeCategoryFontSize() {
+    const fontSize = document.getElementById("fontsize").value;
+    document.getElementById("quotetext").style.fontSize = fontSize + "px";
+    document.getElementById("quoteauthor").style.fontSize =
+        `${fontSize - 10}` + "px";
 }
 
 displayQuote();
