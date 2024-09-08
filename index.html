@@ -5,20 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quote Generator</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
     <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
 </head>
 <body>
     <div class="container">
-        <h1>Quote Generator</h3>
+        <h1>Quote Generator</h1>
         <div class="quote-box">
-            <p class="quotetext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos enim repudiandae odit. Cupiditate blanditiis non expedita at, inventore dolores neque tenetur ullam ab quis debitis eligendi fuga aperiam laboriosam iusto? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus voluptates, voluptate expedita sunt officia fugit delectus sapiente in quasi dolorum eius officiis necessitatibus iste nulla dolore asperiores assumenda optio laborum.</p>
+            <p class="quote" id="quotetext"></p>
+            <p class="author" id="quoteauthor"></p>
         </div>
         <div class="controls">
-            <button>Previous</button>
-            <button>Random</button>
-            <button>Next</button>
+            <button onclick="showPreviousQuote()">Previous</button>
+            <button onclick="showRandomQuote()">Random</button>
+            <button onclick="showNextQuote()">Next</button>
         </div>
     </div>
 </body>
