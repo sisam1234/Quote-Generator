@@ -180,4 +180,12 @@ function onChangeCategoryFontSize() {
         `${fontSize - 10}` + "px";
 }
 
+const toggleSwitch = document.getElementById('darkToggle');
+
+// add an event listener for the toggle change
+toggleSwitch.addEventListener('change', () => {
+    // toggle the dark-mode class on the body if checked
+    document.body.classList.toggle('dark-mode', toggleSwitch.checked);
+});
+
 displayQuote();

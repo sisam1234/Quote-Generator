@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quote Generator</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
 </head>
-<body>
+
+<body class="light-mode">
     <div class="container">
-        <h1>QuoteBox</h1>
+        <h1>Quote of the Day :)</h1>
         <div class="quote-box">
             <p class="quote" id="quotetext"></p>
             <p class="author" id="quoteauthor"></p>
@@ -25,19 +23,26 @@
         <div class="category-and_fontsize">
             <span class="category-list">
                 <span class="category-text">Category:</span>
-                <select  id="categorySelector" onchange="onChangeCategory()">
+                <select id="categorySelector" onchange="onChangeCategory()">
                     <option value="science">Science</option>
                     <option value="coding">Coding</option>
                     <option value="motivational">Motivational</option>
-                    <!-- <option value="motivational">motivational</option> -->
                 </select>
             </span>
-        <span class="fontsize">
-            <label for="fontSize">Font Size:</label>
-          <input type="range" id="fontsize" max="35" min="20" value="32" onchange="onChangeCategoryFontSize()"/>
-        </span>
+            <span class="font-size">
+                <label for="fontsize">Font Size:</label>
+                <input type="range" id="fontsize" max="35" min="20" value="32" onchange="onChangeCategoryFontSize()" />
+            </span>
         </div>
-    </div>
 
+        <div class="darkmode-toggle">
+            <input type="checkbox" id="darkToggle" />
+            <label for="darkToggle"></label>
+        </div>
+
+
+    </div>
+    <script src="script.js"></script>
 </body>
+
 </html>

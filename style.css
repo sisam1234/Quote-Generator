@@ -1,141 +1,202 @@
-@import url("https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&family=Caveat:wght@400..700&display=swap");
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
 
-:root {
-    --dark-color: #080211;
-    --light-color: #fbf9fe;
-    --text-color: #0a0a0a;
-    
-  }
-  body {
-    background-color: var(--light-color);
-    display: flex;
-    justify-content: center;
-    align-items: center; /* Centers content vertically */
-    height: 100vh;
-    margin: 0;
-    padding: 0; /* Reset margin for full height */
-  }
-  
-  .container {
-    width: 50%;
-    text-align: center;
-  }
-  h1 {
-    font-style: italic;
-    font-weight: bold;
-    font-size: 60px;
-    margin-bottom: 20px;
-    margin-top: 2px;
-  }
-  .quote-box {
-    padding: 20px;
-    border: 1px solid black;
-    border-radius: 20px;
-    box-shadow: 0 2px 10px rgba(128, 0, 128, 0.684);
-    height: 150px;
-    margin-bottom: 20px;
-    width: 100%; 
-    background-color:  rgb(202, 197, 210);
-    margin: 0 auto;
-  }
-  .quote {
-    font-size: 30px;
-    font-family: "Caveat", cursive;
-    margin: 10px;
-  }
-  .author {
-    font-size: 22px;
-    font-family: "Caveat", cursive;
-  }
-  
-  .controls {
-    display: flex;
-    justify-content: center; 
-    gap: 100px; 
-    margin-top: 20px;
-    
-  }
-  
-  button {
-    padding: 12px 20px;
-    font-size: 15px;
-    border-radius: 20px;
-    cursor: pointer;
-    width: 100%;
-    color: wheat;
-  }
-  .controls .next {
-    background: linear-gradient(45deg, #4CAF50, #388E3C); /* Green gradient */
+
 }
+
+.light-mode {
+  background-image: url('img/lightmode.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.dark-mode {
+  background-image: url('img/darkmode.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+.dark-mode .quote-box {
+  color: black;
+}
+
+.container {
+  width: 50%;
+  text-align: center;
+}
+
+h1 {
+  font-style: italic;
+  font-weight: bold;
+  font-size: 60px;
+  margin-bottom: 20px;
+  margin-top: 2px;
+}
+
+.quote-box {
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 20px;
+  box-shadow: 0 2px 10px rgba(128, 0, 128, 0.684);
+  margin-bottom: 20px;
+  width: 100%;
+  background-color: rgb(202, 197, 210);
+  margin: 0 auto;
+  height: auto;
+  overflow: hidden;
+}
+
+.quote {
+  font-size: 30px;
+  font-family: "Caveat", cursive;
+  margin: 10px;
+
+}
+
+.author {
+  font-size: 22px;
+  font-family: "Caveat", cursive;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  margin-top: 20px;
+
+}
+
+button {
+  padding: 12px 20px;
+  font-size: 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  width: 100%;
+  color: wheat;
+}
+
+.controls .next {
+  background: linear-gradient(45deg, #4CAF50, #388E3C);
+}
+
 .controls .random {
-    background: linear-gradient(45deg, #2196F3, #1976D2); /* Blue gradient */
+  background: linear-gradient(45deg, #2196F3, #1976D2);
 }
 
 .controls .previous {
-    background: linear-gradient(45deg, #FF9800, #F57C00); /* Orange gradient */
+  background: linear-gradient(45deg, #FF9800, #F57C00);
 }
+
 .controls button:hover {
-    transform: translateY(-2px); /* Slight lift effect */
+  transform: translateY(-2px);
+
 }
+
 .category-and_fontsize {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 20px;
 }
-.category-text { 
+
+.category-text {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-weight: bold;
   margin-right: 8px;
+
 }
+
+
 select {
   padding: 4px;
   font-size: 15px;
 }
 
+.darkmode-toggle {
+  position: absolute;
+  top: 4%;
+  right: 4%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
 
+label[for="darkToggle"] {
+  width: 5em;
+  height: 3em;
+  padding: 0 0.5em;
+  position: relative;
+  display: flex;
+  background: white;
+  border-radius: 10em;
+  box-shadow: inset 0px 5px rgba(0, 0, 0, 0.4), inset 0px -5px 15px rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: 0.3s;
 
+}
 
+label[for="darkToggle"]::after {
+  content: "";
+  width: 3em;
+  height: 3em;
+  position: absolute;
+  left: 0.25em;
+  background: linear-gradient(180deg, #ffcc89, #d8860b);
+  border-radius: 180px;
+  box-shadow: 0px 5px 10px black;
+  transition: 0.3s;
+}
 
-  /* For small screens (e.g., phones) */
-  @media (max-width: 600px) {
-    h1 {
-      font-size: 40px; 
-    }
-    .quote-box {
-      max-width: 90%;
-      height: auto; 
-      padding: 15px;
-    }
-  
-    .controls {
-      flex-direction: column; 
-      gap: 10px; 
-    }
-  
-    button {
-      width: 100%; 
-      font-size: 18px; 
-    }
+#darkToggle {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+#darkToggle:checked+label {
+  background: #4b1010;
+}
+
+#darkToggle:checked+label::after {
+  transform: translateX(3em);
+  background: linear-gradient(180deg, rgb(47, 31, 31), rgb(136, 129, 129));
+}
+
+@media only screen and (max-width: 720px) {
+  .container {
+    width: 85%;
   }
-  
-  /* For medium screens (e.g., tablets) */
-  @media (min-width: 601px) and (max-width: 900px) {
-    h1 {
-      font-size: 50px; 
-    }
-  
-    .quote-box {
-      max-width: 80%; 
-      padding: 20px; 
-    }
-  
-    .controls {
-      gap: 15px; 
-    }
-  
-    button {
-      padding: 10px 18px;
-    }
+
+  button {
+    padding: 7px 10px;
+    font-size: 15px;
   }
-  
+  .controls{
+    gap: 5px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  .quote-box {
+    width: 100%;
+    padding: 1px;
+  }
+
+  .quote {
+    font-size: 20px;
+  }
+
+  .author {
+    font-size: 18px;
+  }
+}
