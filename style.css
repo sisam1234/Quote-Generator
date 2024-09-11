@@ -120,22 +120,16 @@ select {
   font-size: 15px;
 }
 
-.darkmode-toggle {
+
+
+label[for="darkToggle"] {
   position: absolute;
   top: 4%;
   right: 4%;
   display: flex;
-  align-items: center;
-  cursor: pointer;
-}
-
-label[for="darkToggle"] {
   width: 5em;
   height: 3em;
   padding: 0 0.5em;
-  position: relative;
-  display: flex;
-  background: white;
   border-radius: 10em;
   box-shadow: inset 0px 5px rgba(0, 0, 0, 0.4), inset 0px -5px 15px rgba(255, 255, 255, 0.4);
   cursor: pointer;
@@ -148,7 +142,7 @@ label[for="darkToggle"]::after {
   width: 3em;
   height: 3em;
   position: absolute;
-  left: 0.25em;
+  left: 0.1em;
   background: linear-gradient(180deg, #ffcc89, #d8860b);
   border-radius: 180px;
   box-shadow: 0px 5px 10px black;
@@ -179,7 +173,8 @@ label[for="darkToggle"]::after {
     padding: 7px 10px;
     font-size: 15px;
   }
-  .controls{
+
+  .controls {
     gap: 5px;
   }
 
@@ -198,5 +193,21 @@ label[for="darkToggle"]::after {
 
   .author {
     font-size: 18px;
+  }
+
+  label[for="darkToggle"] {
+    top: 2%;
+    right: 2%;
+    width: 3em;
+    height: 2em;
+  }
+
+  label[for="darkToggle"]::after {
+    width: 2em;
+    height: 2em;
+  }
+
+  #darkToggle:checked+label::after {
+    transform: translateX(2em);
   }
 }
